@@ -35,7 +35,7 @@ fi
 if [ -n "$IFACE" ]; then
     # Run dhcpd for specified interface or all interfaces
 
-    data_dir="/data"
+    data_dir=${CONFIG_DIRECTORY:-"/data"}
     if [ ! -d "$data_dir" ]; then
         echo "Please ensure '$data_dir' folder is available."
         echo 'If you just want to keep your configuration in "data/", add -v "$(pwd)/data:/data" to the docker run command line.'
